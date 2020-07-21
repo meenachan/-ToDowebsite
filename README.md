@@ -1,13 +1,11 @@
 # -ToDowebsite
  ToDo website
  
- Viewing the website as a guest/anyone but admin is an issue, because the code cannot find the HTML/CSS files. 
+This should be a fully "functional" website, with stylized CSS. Both viewing as a guest and as an admin should work. 
 
-However, viewing http://127.0.0.1:8100/admin will take you to a login page. Logging in will allow a user to see their current dashboard.
-This dashboard is remembered even when the user logs out and comes back in. I accidentally made a database and have no idea how.
-
-username: todoApp
-email address (optional): testEmail@todoApp.com
+To log in as an admin:
+username: testUser
+email address (optional): testUser@toDo.com
 password: eeeeeeee
 Notice the password is the letter "e", 8 times.
 
