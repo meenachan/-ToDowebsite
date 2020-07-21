@@ -1,7 +1,7 @@
 # -ToDowebsite
  ToDo website
  
- Viewing the website as not an admin is an issue, because the code cannot find the HTML/CSS files. 
+ Viewing the website as a guest/anyone but admin is an issue, because the code cannot find the HTML/CSS files. 
 
 However, viewing http://127.0.0.1:8100/admin will take you to a login page. Logging in will allow a user to see their current dashboard.
 This dashboard is remembered even when the user logs out and comes back in. I accidentally made a database and have no idea how.
