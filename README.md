@@ -1,11 +1,11 @@
 # -ToDowebsite
  ToDo website
  
- Viewing the website as a guest/anyone but admin is an issue, because the code cannot find the HTML/CSS files. 
+The home page, login page, and main pages should all be connected now.
+Notice that you don't actually get verified with your username and password when you log in: you can just push "go" and you'll go in anyway.
+Deletion is still partially buggy: deleting multiple tasks at the same time does not work, and will only delete the first one you selected.
 
-However, viewing http://127.0.0.1:8100/admin will take you to a login page. Logging in will allow a user to see their current dashboard.
-This dashboard is remembered even when the user logs out and comes back in. I accidentally made a database and have no idea how.
-
+To log in as an admin,
 username: todoApp
 email address (optional): testEmail@todoApp.com
 password: eeeeeeee
