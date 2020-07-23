@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../{% static 'css/style.css' %}">
     <link rel="stylesheet" href="../static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
 body{
     background-color: #F2D7D3;
-}        
+}
 .wave-container {
     width: 300vw;
     height: 100%;
@@ -23,7 +22,7 @@ body{
       /* padding:250px; */
      display: flex;
      flex-direction: row;
-     
+
   }
   h1 {
     font-family: 'Lobster', cursive;
@@ -50,7 +49,7 @@ body{
     animation: drift 8000ms infinite linear;
     will-change: transform;
   }
-  
+
   .wave.-two {
     animation: drift 9000ms infinite linear;
     opacity: 1;
@@ -58,7 +57,7 @@ body{
     top: 60%;
     left: -32%;
   }
-  
+
   .wave.-three {
     animation: drift 4000ms infinite linear;
     opacity: 1;
@@ -67,7 +66,7 @@ body{
     left: -36%;
     z-index: -2;
   }
-  
+
   @keyframes drift {
     from {
       transform: rotate(0deg);
@@ -76,7 +75,7 @@ body{
       transform: rotate(360deg);
     }
   }
-  
+
     </style>
 </head>
 <body>
@@ -90,7 +89,7 @@ body{
         <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./login.html">
+              <a class="nav-link" href="/login">
                 <i class="fab fa-facebook-f"></i> Login
                 <!-- <span class="sr-only">(current)</span> -->
               </a>
@@ -103,7 +102,7 @@ body{
         </div>
       </nav>
       <!--/.Navbar -->
-    
+
       <div class="wrapper">
         <!-- Wave bg-->
         <div class="wave-container">
@@ -115,7 +114,7 @@ body{
     <div class ="text">
         <h1>Organize it all with Us</h1><button type="button" class="btn btn-danger btn-lg">Get Started</button>
     </div>
- 
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
