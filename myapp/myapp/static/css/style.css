@@ -17,8 +17,9 @@ body {
 }
 /* super basic grid structure */
 .container {
+   height: 70vh;
     width: 600px;
-    margin-left: 30px;
+    margin-left: 150px;
     margin-top: 30px;
     background: #ffffff;
     padding: 20px 0;
@@ -26,7 +27,7 @@ body {
             box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 .dashboard{
-    
+    height: 70vh;
     color:black;
     width: 600px;
     margin-left: 30px;
@@ -39,11 +40,15 @@ body {
 }
 .row {
     display: block;
-    padding: 10px;
+    padding: 60px;
+    margin-left:5px;
     text-align: center;
     width: 100%;
     clear: both;
     overflow: hidden;
+}
+.btn-lg{
+    margin: 5px;
 }
 .half {
     width: 50%;
@@ -184,6 +189,22 @@ button {
 .taskDelete:hover {
     background: #c0392b;
 }
+
+.addBasket {
+    background: #34E292;
+    padding-left: 30px;
+}
+.addBasket:hover {
+    background: #1ED580;
+}
+
+.emptyBasket {
+    background: #e74c3c;
+    padding-left: 30px;
+}
+.emptyBasket:hover {
+    background: #c0392b;
+}
 /* task styles */
 .taskList {
     list-style: none;
@@ -291,6 +312,16 @@ footer a {
     content: '\f14a';
     color: #16a085;
 }
+
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+
 /* custom select menu */
 .taskCategory {
     -webkit-appearance: none;
@@ -319,7 +350,7 @@ footer a {
 
 .wave-container {
     width: 300vw;
-    height: 100%;
+    height: 100VH;
     position: fixed;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
@@ -420,9 +451,9 @@ footer a {
 	background-color:transparent;
 	border-radius:50% 0;
 	box-shadow:-.25em 0 0 brown;
+
+
 }
-
-
 
 #orange {
 	position:relative;
@@ -528,4 +559,7 @@ footer a {
 	box-shadow:inset -.35em -.35em rgba(0,0,0,0.2); */
 /* } */
 
+
+
+  
 
