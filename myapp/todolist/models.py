@@ -21,6 +21,18 @@ class TodoList(models.Model): #Todolist able name that inherits models.Model
 
 
     class Meta:
-        ordering = ["-created"] #ordering by the created field
+        ordering = ["created"] #ordering by the created field
     def __str__(self):
         return self.title #name to be shown when called
+
+
+class Fruits(models.Model):
+    title = models.TextField(blank = True)
+
+    class Meta:
+        verbose_name = ("Fruit")
+        verbose_name_plural = ("Fruits")
+
+    def __str__(self):
+        return self.title
+
