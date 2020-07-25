@@ -27,12 +27,13 @@ class TodoList(models.Model): #Todolist able name that inherits models.Model
 
 
 class Fruits(models.Model):
-    title = models.TextField(blank = True)
+    info = models.TextField(blank = True)
+    type = models.TextField(blank = True)
 
     class Meta:
         verbose_name = ("Fruit")
         verbose_name_plural = ("Fruits")
 
     def __str__(self):
-        return self.title
+        return self.info
 
