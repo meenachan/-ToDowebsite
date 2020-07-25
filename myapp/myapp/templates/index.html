@@ -10,13 +10,14 @@
    <!-- <link rel="stylesheet"  href="{% static 'myapp/style.css' %}"> -->
    <base href="/">
    <!-- <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" > -->
+   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Pacifico&display=swap" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="../static/css/style.css" >
 </head>
 <body>
 <div django-app="TaskManager">
     <div class="container">
             <div class="content">
-            <h1>TodoApp</h1>
+            <h1 class="head">TodoApp</h1>
             <p class="tagline">a Django todo app</p>
             <form action="" method="post">
             {% csrf_token %} <!-- csrf token for basic security -->
@@ -41,8 +42,8 @@
                 <div class="row">
                     <button class="taskAdd btn-lg" name="taskAdd" type="submit" onclick="inctask()"><i class="fa fa-plus icon"></i>Add Task</button>
                     <button class="taskDelete btn-lg" name="taskDelete" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
-                    <button class="addBasket btn-lg" name="addBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-check"></i>Add to Basket</button>
-                    <button class="emptyBasket btn-lg" name="emptyBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-times"></i>Empty Basket</button>
+                    <button class="addBasket btn-lg" name="addBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-check icon" ></i>Add to Basket</button>
+                    <button class="emptyBasket btn-lg" name="emptyBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-times icon"></i>Empty Basket</button>
                     <p></p>
 
 
@@ -70,10 +71,10 @@
 
 </div>
 <div class="dashboard">
-    <h1>Your Dashboard</h1>
+    <h1 class="head"> Dashboard</h1>
      <!-- progressbar  -->
      <div class="progress">
-      <div id="dynamic" class="progress-bar progress-bar-striped  progress-bar-animated bg-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="dynamic" class="progress-bar progress-bar-striped  progress-bar-animated bg-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100">0%</div>
     </div>
 
     <!--<div class="garden">-->
@@ -90,7 +91,7 @@
     <!--</div>-->
 
      <div class="garden">
-         <h1>Your Basket</h1>
+         <h1>Basket</h1>
          <p></p>
             {% for fruit in allFruits %} <!-- django template lang - for loop -->
              <div id= "{{ fruit.type }}" name = "fruit"  class="taskname" data-toggle="tooltip" data-placement="top" title="{{fruit}}"></div>
@@ -129,7 +130,7 @@ function addFruitToDisplay(){
     });
 
 
-    progress = (taskdone / tasks) * 100;
+    progress =Math.floor((taskdone / tasks) * 100);
     if (progress < 100)
     {
         progressbardynamic(progress);
