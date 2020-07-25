@@ -9,34 +9,47 @@ html {
     font-size: 100%;
 }
 body {
-    background: #b1f6cb;
-    background: #b1f6cb;
+    /* background: #b1f6cb;
+    background: #b1f6cb; */
+    /* background-color: #11aa44; */
+background-image: url("./frutas-pattern.gif");
     font-family: 'Open Sans',sans-serif;
     display: flex;
     flex-direction: row;
+
 }
 /* super basic grid structure */
 .container {
-   height: 70vh;
-    width: 600px;
-    margin-left: 150px;
+   /* height: 70vh; */
+    width: 700px;
+    margin-left: 60px;
     margin-top: 30px;
     background: #ffffff;
-    padding: 20px 0;
+    padding: 50px 0;
+    border-radius: 20px;
+    border : 1px solid black;
+    margin-bottom: 30px;
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
             box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 .dashboard{
-    height: 70vh;
+    /* height: 70vh; */
     color:black;
-    width: 600px;
+    width: 650px;
+    text-align: center;
     margin-left: 30px;
     margin-top: 30px;
     background: #ffffff;
-    
+    padding-top: 20px;
+    border-radius: 20px;
+    border : 1px solid black;
     padding: 20px 0;
+    margin-bottom: 30px;
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
             box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+.dashboard h1{
+    padding-top: 50px;
 }
 .row {
     display: block;
@@ -49,6 +62,8 @@ body {
 }
 .btn-lg{
     margin: 5px;
+    width: 220px;
+    height: 60px;
 }
 .half {
     width: 50%;
@@ -56,11 +71,12 @@ body {
 }
 .content {
     background: #fff;
+    padding-top: 20px;
 }
 /* logo */
 h1 {
     font-family: 'Rokkitt', sans-serif;
-    color: #666;
+    color: black;
     text-align: center;
     font-weight: 400;
     margin: 0;
@@ -72,7 +88,7 @@ h1 {
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #777; 
+    color: #777;
 }
 /* inputs */
 .inputContainer {
@@ -176,14 +192,14 @@ button {
     font-size: 20px;
 }
 .taskAdd {
-    background: #444;
+    background:#3282b8;
     padding-left: 31px;
 }
 .taskAdd:hover {
-    background: #303030;
+    background: #1a5b86
 }
 .taskDelete {
-    background: #e74c3c;
+    background: #e84a5f;
     padding-left: 30px;
 }
 .taskDelete:hover {
@@ -192,18 +208,18 @@ button {
 
 .addBasket {
     background: #34E292;
-    padding-left: 30px;
+    padding-left: 20px;
 }
 .addBasket:hover {
     background: #1ED580;
 }
 
 .emptyBasket {
-    background: #e74c3c;
+    background:#1b262c;
     padding-left: 30px;
 }
 .emptyBasket:hover {
-    background: #c0392b;
+    background: #0f1518;
 }
 /* task styles */
 .taskList {
@@ -213,9 +229,9 @@ button {
 .taskItem {
     border-top: 1px solid #e5e5e5;
     padding: 15px 0;
-    color: #777;
+    color:rgb(11, 121, 165);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.5px;
 }
 .taskList .taskItem:nth-child(even) {
@@ -243,11 +259,11 @@ button {
 [class*='category-'] {
     display: inline-block;
     font-size: 10px;
-    background: #444;
+    background: #d35400;
     vertical-align: middle;
     color: #fff;
     padding: 10px;
-    width: 75px;
+    width: 100px;
     text-align: center;
     border-radius: 2px;
     float: right;
@@ -258,21 +274,22 @@ button {
 .category- {
     background: transparent;
 }
-.category-Personal {
+.category-Homework {
     background: #2980b9;
 }
 .category-Work {
     background: #8e44ad;
 }
-.category-School {
+.category-New {
     background: #f39c12;
 }
-.category-Cleaning {
+.category-Productivity {
     background: #16a085;
 }
 .category-Other {
     background: #d35400;
 }
+
 footer {
     text-align: center;
     font-size: 11px;
@@ -355,7 +372,7 @@ footer a {
     overflow: hidden;
     transform: translate3d(0, 0, 0);
   }
-  
+
   .wave {
     opacity: 1;
     position: absolute;
@@ -370,7 +387,7 @@ footer a {
     animation: drift 8000ms infinite linear;
     will-change: transform;
   }
-  
+
   .wave.-two {
     animation: drift 9000ms infinite linear;
     opacity: 1;
@@ -378,7 +395,7 @@ footer a {
     top: 60%;
     left: -32%;
   }
-  
+
   .wave.-three {
     animation: drift 4000ms infinite linear;
     opacity: 1;
@@ -387,7 +404,7 @@ footer a {
     left: -36%;
     z-index: -2;
   }
-  
+
   @keyframes drift {
     from {
       transform: rotate(0deg);
@@ -407,15 +424,21 @@ footer a {
 
   /* progress bar */
   .progress{
-      margin-top: 10px;
-      margin-bottom: 30px;
+      margin-top: 40px;
+      margin-bottom: 10px;
   }
 /* garden fruits */
 
 .garden{
-    margin-top: 150px;
+    margin-top: 20px;
     padding:20px;
-    
+    color: black;
+}
+.garden h1{
+     color: #FF1177;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 600;
+     margin-bottom: 50px;
 }
 .garden div{
     display:inline-block;
@@ -461,7 +484,8 @@ footer a {
 	height:6em;
 	margin-top:1em;
 	background-color:orange;
-	border-radius:50%;
+    
+    border-radius:50%;
 	box-shadow:inset -.25em -.25em #CC8400;
 }
 #orange:before {
@@ -496,7 +520,8 @@ footer a {
 	position:relative;
 	width:6em;
 	height:6em;
-	margin-top:1em;
+    margin-top:1em;
+    margin-right: 1em;
 	background-color:#FFE135;
 	border-radius:50% 15%;
 	transform:rotate(45deg);
@@ -562,4 +587,20 @@ footer a {
 
 
   
-
+  .head {
+    text-align: center;
+    font-size: 5em;
+    margin: 20px 0 20px 0;
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    color: #FF1177;
+    font-family: Audiowide;
+  }
+  
+.head:hover {
+    color: #c42268;
+  }
+  /*glow for webkit*/
+  
