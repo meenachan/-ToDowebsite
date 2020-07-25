@@ -10,13 +10,14 @@
    <!-- <link rel="stylesheet"  href="{% static 'myapp/style.css' %}"> -->
    <base href="/">
    <!-- <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" > -->
+   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Pacifico&display=swap" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="../static/css/style.css" >
 </head>
 <body>
 <div django-app="TaskManager">
     <div class="container">
             <div class="content">
-            <h1>TodoApp</h1>
+            <h1 class="head">TodoApp</h1>
             <p class="tagline">a Django todo app</p>
             <form action="" method="post">
             {% csrf_token %} <!-- csrf token for basic security -->
@@ -39,12 +40,12 @@
                     <label for="dueDate">Due Date</label>
                 </div>
                 <div class="row">
-                    <button class="taskAdd btn-lg" name="taskAdd" type="submit" onsubmit="inctask()"><i class="fa fa-plus icon"></i>Add Task</button>
+                    <button class="taskAdd btn-lg" name="taskAdd" type="submit" onclick="inctask()"><i class="fa fa-plus icon"></i>Add Task</button>
                     <button class="taskDelete btn-lg" name="taskDelete" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
-                    <button class="addBasket btn-lg" name="addBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-check"></i>Add to Basket</button>
-                    <button class="emptyBasket btn-lg" name="emptyBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-times"></i>Empty Basket</button>
+                    <button class="addBasket btn-lg" name="addBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-check icon" ></i>Add to Basket</button>
+                    <button class="emptyBasket btn-lg" name="emptyBasket" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-times icon"></i>Empty Basket</button>
                     <p></p>
-                   
+
 
                 </div>
 
@@ -70,13 +71,12 @@
 
 </div>
 <div class="dashboard">
-    <h1>Your Dashboard</h1>
+    <h1 class="head"> Dashboard</h1>
      <!-- progressbar  -->
-
      <div class="progress">
-      <div id="dynamic" class="progress-bar progress-bar-striped  progress-bar-animated bg-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="dynamic" class="progress-bar progress-bar-striped  progress-bar-animated bg-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100">0%</div>
     </div>
-
+   
     <!--<div class="garden">-->
       <!--<h1>Basket</h1>-->
       <!--<div id="apple"></div>-->
@@ -91,59 +91,65 @@
     <!--</div>-->
 
      <div class="garden">
-         <h1>Your Basket</h1>
+         <h1>Basket</h1>
          <p></p>
             {% for fruit in allFruits %} <!-- django template lang - for loop -->
-             <div id="orange"  class="taskname" data-toggle="tooltip" data-placement="top" title="{{fruit}}"></div>
-            
+             <div id= "{{ fruit.type }}" name = "fruit"  class="taskname" data-toggle="tooltip" data-placement="top" title="{{fruit}}"></div>
             {% endfor %}
             <!-- taskList -->
     </div>
-
-     <div class="garden2">
-      <div id="apple" style="display: none;"></div>
-    </div>
-
-     <div class="garden3">
-      <div id="lemon" style="display: none;"></div>
-    </div>
-
   </div>
 
 
- 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script type="text/javascript">
- var checked = [];
+var checked = [];
+var allTasks = [];
  var progress = 0;
- var counttask =0;
+ var counttask = 0;
+
+
 function addFruitToDisplay(){
-    
-    var garden = document.querySelector(".garden");
-    var garden2 = document.querySelector(".garden2");
-    garden2.style.display = "none";
-    var garden3 = document.querySelector(".garden3");
-    garden3.style.display = "none";
-    var taskadded = inctask();
     var taskdone =0;
+    var tasks = 0;
 
     $("input[name='checkedbox']:checked").each(function ()
     {
         checked.push(parseInt($(this).val()));
         taskdone = taskdone+1;
     });
-    progress = (taskdone/taskadded) *100;
-      progressbardynamic(progress);
 
+    $("input[name='checkedbox']").each(function ()
+    {
+        allTasks.push(parseInt($(this).val()));
+        tasks = tasks+1;
+    });
+
+
+    progress =Math.floor((taskdone / tasks) * 100);
+    if (progress < 100)
+    {
+        progressbardynamic(progress);
+    }
+    else
+    {
+        progress = 100
+        progressbardynamic(progress);
+    }
 }
+
+
 // function used to count the number of tasks added
 function inctask(){
     counttask = counttask+1;
      return counttask;
 }
+
+
 function progressbardynamic(progress){
     $("#dynamic")
       .css("width", progress + "%")
