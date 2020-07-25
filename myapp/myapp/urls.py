@@ -16,7 +16,9 @@ Including another URLconf
 
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path, include
 from todolist.views import index
+
 import todolist
 
 
@@ -24,5 +26,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^list/', todolist.views.index, name="TodoList"),
     url(r'^$', todolist.views.home, name="homePage"),
-    url(r'^login/', todolist.views.login, name="loginPage"),
+    path('accounts/', include('django.contrib.auth.urls')), # new
+    url(r'^login/', todolist.views.loginPage, name="loginPage"),
 ]

@@ -287,6 +287,14 @@
   font-size: 18px;
 }
 
+.invalid {
+    width: 100%;
+    float: left;
+    text_align: center;
+    color: rgba(100, 0, 0, 0);
+    font-size: 18px;
+}
+
 .click-efect {
   position: absolute;
   top: 0;
@@ -429,15 +437,15 @@ html {
 </head>
 <body>
     <div class="materialContainer">
-
-
         <div class="box">
-
            <div class="title">LOGIN</div>
+
             {% block content %}
             <form method="POST" id="add_form" action="{% url 'loginPage' %}">
                 {% csrf_token %}
+
           <div class="form-group">
+              <p>Invalid username or password</p>
             <div class="input">
                 <input type="text" name="username" placeholder="Username" required="required">
                 <span class="spin"></span></div>
@@ -456,19 +464,6 @@ html {
                 <i class = "fa fa-check"></i>
             </div>
             <div class="clear"></div> </div>
-
-
-                {% for message in messages %}
-
-                    <div class="alert alert-success">
-                        <a class="close" href="#" data-dismiss="alert">×</a>
-
-                        {{ message }}
-
-                    </div>
-            {% endfor %}
-
-
             </form>
             {% endblock %}
 
