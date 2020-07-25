@@ -52,9 +52,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
 ]
 
 ROOT_URLCONF = 'myapp.urls'
+LOGIN_REDIRECT_URL = 'index.html'
 
 TEMPLATES = [
     {
@@ -125,6 +127,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+LOGIN_REDIRECT_URL = '/list'
 STATIC_URL = '/static/'
 
